@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>News Search Engine</title>
+    <style type="text/css">
+        div#doc {width:800px}
+    .pagination-page-info {
+        padding: .6em;
+        padding-left: 0;
+        width: 40em;
+        margin: .5em;
+        margin-left: 0;
+        font-size: 12px;
+    }
+    .pagination-page-info b {
+        color: black;
+        background: #6aa6ed;
+        padding-left: 2px;
+        padding: .1em .25em;
+        font-size: 150%;
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>duplicated news</h1>           
+        </div>
+        <hr>
+ 		{% for doc in docs%}
+            <div id="doc">
+                <ul id="navigation">
+                    <p><big><a href="{{doc.url}}" target="_blank">{{doc.title}}</a></big></p>
+                    <p><br>{{doc.snippet}}<br></p>
+                </ul>
+            </div>
+            <br>
+        {% endfor %}
+	</div>
+</body>
+</html>
